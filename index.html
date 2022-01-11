@@ -1,41 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Calculator</title>
-  <link href="styles.css" rel="stylesheet">
-  <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="wrapper">
+        <h1>GPA Calculator</h1>
+        <div class="form-row">
+            <div class="col">
+                <input id="course-code" class="form-control" type="text" placeholder="Course Code">
+            </div>
+            <div class="col">
+                <input id="unit-load" class="form-control" type="number" placeholder="Unit Load" min="1" max="7">
+            </div>
+            <div class="col">
+                <select id="grade" class="form-control">
+                    <option value="">Grade</option>                  
+                    <option value="4">A</option>
+                    <option value="3.5">B+</option>
+                    <option value="3">B</option>
+                    <option value="2.5">C+</option>
+                    <option value="2">C</option>
+                    <option value="1.5">D+</option>
+                    <option value="1">D</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+            <div class="col">
+                <input id="add" class="btn btn-primary" type="button" value="Add">
 
-  <header>
-    <P ALIGN=CENTER> CALCULATOR </P>
-  </header>
-  <div class="calculator-grid">
-    <div class="output">
-      <div data-previous-operand class="previous-operand"></div>
-      <div data-current-operand class="current-operand"></div>
+            </div>
+        </div>
+        <table id="table" class="table table-bordered display-none">
+            <thead>
+                <tr>
+                    <th>Course Code</th>
+                    <th>Unit Load</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+        
+            </tbody>
+            <tfoot id="tfoot">
+        
+            </tfoot>
+        </table>
+        <div class="row">
+            <div class="col">
+                <input id="calc-gp" class="btn btn-success display-none" type="button" value="Calc GP">
+            </div>
+            <div class="col">
+            <input id="clear" class="btn btn-warning display-none" type="button" value="Clear">
+            </div>
+        </div>
     </div>
-    <button data-all-clear class="span-two">AC</button>
-    <button data-delete>DEL</button>
-    <button data-operation>÷</button>
-    <button data-number>1</button>
-    <button data-number>2</button>
-    <button data-number>3</button>
-    <button data-operation>*</button>
-    <button data-number>4</button>
-    <button data-number>5</button>
-    <button data-number>6</button>
-    <button data-operation>+</button>
-    <button data-number>7</button>
-    <button data-number>8</button>
-    <button data-number>9</button>
-    <button data-operation>-</button>
-    <button data-number>.</button>
-    <button data-number>0</button>
-    <button data-equals class="span-two">=</button>
-  </div>
+    <script src="main.js"></script>
 </body>
 </html>
